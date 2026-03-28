@@ -377,7 +377,7 @@
 
   .leaflet-div-icon { background: none !important; border: none !important; box-shadow: none !important; }
   .leaflet-marker-shadow { display: none !important; }
-  .leaflet-tile { filter: brightness(1) saturate(0.85); }
+  .leaflet-tile { filter: saturate(0.8); }
 
   /* FOOTER */
   footer {
@@ -594,7 +594,7 @@ const MONUMENTS = [
   {name:"MUSEO ETNOGRAFICO", period:"1901 - 2000", descIt:"", descEn:"", photo:"", coords:[[44.915671,8.6181253],[44.9157033,8.6180261],[44.9156691,8.6180019],[44.9157517,8.6177525],[44.9158904,8.6174092],[44.9158011,8.6173475],[44.91567,8.6176854],[44.9156131,8.6178517],[44.9156159,8.6178651],[44.9155637,8.6180569],[44.915671,8.6181253]], hasHoles:false},
   {name:"PALAZZO DELLE POSTE", period:"1901 - 2000", descIt:"", descEn:"", photo:"", coords:[[44.9140924,8.6168105],[44.9141361,8.6166978],[44.9139813,8.616604],[44.9140782,8.6162821],[44.9142501,8.6163827],[44.9142064,8.6165289],[44.9143185,8.6166174],[44.9143944,8.6163223],[44.9140525,8.6160528],[44.9138721,8.6166375],[44.9140924,8.6168105]], hasHoles:false},
   {name:"PIRAMIDE", period:"1901 - 2000", descIt:"", descEn:"", photo:"", coords:[[44.8951341,8.6699093],[44.8949973,8.6698194],[44.8949327,8.6700273],[44.8950686,8.6701158],[44.8951341,8.6699093]], hasHoles:false},
-  {name:"CIMITERO MUSULMANO DI ALESSANDRIA", period:"1901 - 2000", descIt:"", descEn:"", photo:"", coords:[[44.92301,8.629244],[44.923125,8.628513],[44.922915,8.62845],[44.922801,8.629182],[44.92301,8.629244]], hasHoles:false},
+  {name:"CIMITERO MUSULMANO DI ALESSANDRIA", period:"1901 - 2000", descIt:"", descEn:"", photo:"", coords:[[44.92301,8.629244],[44.923125,8.628513],[44.922915,8.62845],[44.922801,8.629182],[44.92301,8.629244]], hasHoles:false},
 ];
 
 const PERIOD_COLORS = {
@@ -620,9 +620,9 @@ function escapeAttr(v) { return escapeHtml(v); }
 
 // Map
 const map = L.map('map', { center: [44.913, 8.616], zoom: 15, zoomControl: false });
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-  subdomains: 'abcd', maxZoom: 19
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 19
 }).addTo(map);
 L.control.zoom({ position: 'topleft' }).addTo(map);
 
